@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Cultural Storyteller</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/frontend/style.css" />
+</head>
+
+<body>
+
+  <section class="hero">
+    <h1>Smart Cultural Storyteller</h1>
+    <p class="tagline">Ancient cultures. Living stories. A fate meant for you.</p>
+    <button id="startBtn" class="primary-btn">✨ Create a Story</button>
+  </section>
+
+  <section class="panel">
+    <div id="controlsCard" class="controls-card hidden">
+
+      <h2>Shape Your Story</h2>
+
+      <label>📖 Story Mode</label>
+      <div class="mode-toggle">
+        <label>
+          <input type="radio" name="mode" value="cultural" checked />
+          🏛️ Cultural (Canonical)
+        </label>
+        <label>
+          <input type="radio" name="mode" value="fictional" />
+          ✨ Fictional (Inspired)
+        </label>
+      </div>
+
+      <label>🌍 Culture</label>
+      <div class="dropdown" data-type="culture">
+        <div class="dropdown-selected">
+          <span class="icon">🕉️</span>
+          <span class="text">Ancient India</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="dropdown-menu">
+          <div class="dropdown-item selected">🕉️ Ancient India</div>
+          <div class="dropdown-item">🎎 Japanese Folklore</div>
+          <div class="dropdown-item">🏛️ Greek Mythology</div>
+          <div class="dropdown-item">🪓 Norse Legends</div>
+        </div>
+      </div>
+
+      <label>🌗 Emotional Tone</label>
+      <div class="dropdown" data-type="emotion">
+        <div class="dropdown-selected">
+          <span class="icon">🌱</span>
+          <span class="text">Hope</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="dropdown-menu">
+          <div class="dropdown-item selected">🌱 Hope</div>
+          <div class="dropdown-item">🔥 Courage</div>
+          <div class="dropdown-item">🌑 Loss</div>
+        </div>
+      </div>
+
+      <label>🧿 Moral / Lesson</label>
+      <div class="dropdown" data-type="lesson">
+        <div class="dropdown-selected">
+          <span class="icon">🧿</span>
+          <span class="text">True strength lies in compassion</span>
+          <span class="arrow">▾</span>
+        </div>
+        <div class="dropdown-menu">
+          <div class="dropdown-item selected">True strength lies in compassion</div>
+          <div class="dropdown-item">Pride leads to downfall</div>
+        </div>
+      </div>
+
+      <label>✍️ What should the story be about?</label>
+      <textarea id="userInput" rows="3"
+        placeholder="Example: A story about Lord Hanuman and his devotion..."></textarea>
+
+      <button id="generateBtn" class="primary-btn" style="margin-top:16px;">
+        📜 Generate Story
+      </button>
+
+    </div>
+  </section>
+
+  <script src="/frontend/app.js"></script>
+
+  <div id="craftingOverlay" class="crafting-overlay hidden">
+    <div class="crafting-box">
+      <div class="loader"></div>
+      <p id="craftingText">Your story is being crafted...</p>
+    </div>
+  </div>
+
+</body>
+
+</html>

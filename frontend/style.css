@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: radial-gradient(circle at top, #1c1c1c, #000);
+  color: #fff;
+}
+
+.hero {
+  padding: 80px 20px 40px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 48px;
+}
+
+.tagline {
+  opacity: 0.85;
+  margin-bottom: 30px;
+}
+
+.primary-btn,
+.story-controls button {
+  background: linear-gradient(135deg, #ffd27d, #f6a96d);
+  border: none;
+  color: #000;
+  padding: 12px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.story-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.panel {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.controls-card {
+  width: 360px;
+  background: rgba(20, 20, 20, 0.85);
+  border-radius: 16px;
+  padding: 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
+
+.hidden {
+  display: none;
+}
+
+label {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-top: 14px;
+  display: block;
+}
+
+textarea,
+input,
+select {
+  width: 100%;
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.dropdown {
+  position: relative;
+  margin-top: 6px;
+}
+
+.dropdown-selected {
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  width: 100%;
+  background: #111;
+  border: 1px solid #333;
+  border-radius: 10px;
+  margin-top: 6px;
+  z-index: 10;
+}
+
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background: #222;
+}
+
+.story-page {
+  min-height: 100vh;
+}
+
+.story-header {
+  text-align: center;
+  padding: 60px 20px 20px;
+}
+
+.story-header h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 8px;
+}
+
+.story-header .subtitle {
+  opacity: 0.8;
+}
+
+.story-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 80px;
+}
+
+.story-title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.story-title h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.story-body {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.story-text-panel {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  text-align: left;
+}
+
+.story-media-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.story-media-panel img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+  border-radius: 18px;
+  display: none;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.65);
+}
+
+#sceneAudio {
+  width: 100%;
+  display: none;
+}
+
+.story-controls {
+  position: sticky;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+#sceneCounter {
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .story-body {
+    grid-template-columns: 1fr;
+  }
+
+  .story-title h2 {
+    font-size: 2.2rem;
+  }
+
+  .crafting-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .crafting-box {
+    text-align: center;
+    color: #ffd27d;
+    animation: fadeInUp 0.6s ease;
+  }
+
+  .loader {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(255, 210, 125, 0.25);
+    border-top-color: #ffd27d;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+    margin: 0 auto 18px;
+  }
+
+  #craftingText {
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.4px;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes pulse {
+
+    0%,
+    100% {
+      opacity: 0.6;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

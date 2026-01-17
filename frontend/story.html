@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Story</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/frontend/style.css" />
+</head>
+
+<body class="story-page">
+
+  <header class="story-header">
+    <h1>Your Story</h1>
+    <p class="subtitle">A tale shaped by fate and choice</p>
+  </header>
+
+  <main class="story-wrapper">
+
+    <div class="story-title">
+      <h2 id="sceneTitle"></h2>
+    </div>
+
+    <div class="story-body">
+
+      <div class="story-text-panel">
+        <div id="sceneText"></div>
+      </div>
+
+      <div class="story-media-panel">
+        <img id="sceneImage" alt="Scene Image" />
+        <audio id="sceneAudio" controls></audio>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="story-controls">
+    <button id="prevBtn">◀ Previous</button>
+    <span id="sceneCounter"></span>
+    <button id="nextBtn">Next ▶</button>
+
+    <button id="generateImageBtn">🖼 Generate Image</button>
+    <button id="generateNarrationBtn">🎧 Narrate Scene</button>
+    <button id="generateVideoBtn">🎬 Generate Video</button>
+  </footer>
+
+  <script src="/frontend/story.js"></script>
+</body>
+</html>
